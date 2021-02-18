@@ -12,8 +12,8 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
             <Card.Img variant="top" style={{height: "250px" , objectFit: "cover"}} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
             <Card.Body>
                 <Card.Title className="title">{movie.title}</Card.Title>
-                <Card.Text>
-                    <p className="text">{movie.overview}</p>
+                <Card.Text className="text">
+                    {movie.overview}
                 </Card.Text>
             </Card.Body>
         </Card>

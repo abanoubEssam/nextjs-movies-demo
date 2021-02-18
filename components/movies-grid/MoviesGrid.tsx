@@ -4,10 +4,15 @@ import { Movie } from '../../models/movie.model';
 import MovieCard from '../movie-card/MovieCard';
 
 interface Props {
-    movies: Movie[]
+    movies: Movie[],
+    loading:boolean
 }
 
-const MoviesGrid: React.FC<Props> = ({ movies }) => {
+const MoviesGrid: React.FC<Props> = ({ movies,loading }) => {
+    if(loading){
+        return<div style={{ display:"flex" , alignItems:"center" , justifyContent:"center" , minHeight:"100vh",fontSize:"22px",fontWeight:"bold"  }}>Loading....</div>
+    }
+
     return (
         <Container style={{paddingTop: "50px" , paddingBottom: "50px"}}>
             <Row>
